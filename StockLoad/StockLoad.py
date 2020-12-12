@@ -1,4 +1,4 @@
-def LetterToASCII10(letter):
+def LetterToNumber(letter):
     #this function takes a letter as input and
     #returns its position in the english alphabet
     #starting with 0
@@ -21,10 +21,10 @@ def StockLoad(combination, end, init="A"):
     for idx, i in enumerate(list(combination)): # iterate through the combination
         #caculates the gab between two subsequent leters in the array
         if idx==0:
-            sol.append(LetterToASCII10(combination[idx])-LetterToASCII10(firstLetter))#initially the gap between the first entry and the overall initial ("A") is calculated
+            sol.append(LetterToNumber(combination[idx])-LetterToNumber(firstLetter))#initially the gap between the first entry and the overall initial ("A") is calculated
         elif idx==len(combination)-1:
-            sol.append(LetterToASCII10(lastLetter)-LetterToASCII10(combination[idx]))#the end gap is calculated between the last llasteletter and the last entry
+            sol.append(LetterToNumber(lastLetter)-LetterToNumber(combination[idx]))#the end gap is calculated between the last llasteletter and the last entry
         else:
-            sol.append(LetterToASCII10(combination[idx+1])-LetterToASCII10(combination[idx])-1)# in any other case the gap is the difference between two seubsequent entries -1, because if two bars are placed side by side there is no space inbetween
+            sol.append(LetterToNumber(combination[idx+1])-LetterToNumber(combination[idx])-1)# in any other case the gap is the difference between two seubsequent entries -1, because if two bars are placed side by side there is no space inbetween
     return sol
 
